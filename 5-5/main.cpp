@@ -22,15 +22,15 @@ void save() {
 void load() {
 	int count=0;
 	ifstream in("student.dat", ios::binary);
-	Student s;
+	Student s[MAX];
 	if (in.fail()) {
 		cout << "¶ÁÈ¡Ê§°Ü£¡" << endl;
 		exit(0);
 	}
 	in.read((char*)&s, sizeof(Student));
 	while (!in.eof()) {
-		s.display();
-		in.read((char*)&s, sizeof(Student));
+		s[count].display();
+		in.read((char*)&s[++count], sizeof(Student));
 	}
 }
 int main() {

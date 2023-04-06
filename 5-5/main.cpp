@@ -32,9 +32,30 @@ void load() {
 		s[count].display();
 		in.read((char*)&s[++count], sizeof(Student));
 	}
+	in.close();
+}
+void find(char* str) {
+	ifstream in("student.dat", ios::binary);
+	Student s;
+	if (in.fail()) {
+		cout << "读取失败！" << endl;
+		exit(0);
+	}
+	in.read((char*)&s, sizeof(Student));
+	while (!in.eof())
+	{
+		if (s.find(str))
+			s.display();
+		in.read((char*)&s, sizeof(Student));
+	}
+	in.close();
 }
 int main() {
 	save();
 	load();
+	char str[10];
+	cout << "输入要查询的姓名：";
+	cin >> str;
+	find(str);
 	return 0;
 }

@@ -15,24 +15,25 @@ void save() {
 	}
 	for (int i = 0; i < count; i++) {
 		s.set();
-		out.write((char *)&s, sizeof(Student));
+		out.write((char*)&s, sizeof(Student));
 	}
 	out.close();
 }
-void load() {
-	int count=0;
+int load(Student s[]) {
+	int count = 0;
 	ifstream in("student.dat", ios::binary);
-	Student s[MAX];
+
 	if (in.fail()) {
 		cout << "¶ÁÈ¡Ê§°Ü£¡" << endl;
 		exit(0);
 	}
-	in.read((char*)&s, sizeof(Student));
+	in.read((char*)s, sizeof(Student));
 	while (!in.eof()) {
 		s[count].display();
 		in.read((char*)&s[++count], sizeof(Student));
 	}
 	in.close();
+	return count;
 }
 void find(char* str) {
 	ifstream in("student.dat", ios::binary);
@@ -52,10 +53,26 @@ void find(char* str) {
 }
 int main() {
 	save();
-	load();
+	Student s[MAX];
+	int count=load(s);
 	char str[10];
 	cout << "ÊäÈëÒª²éÑ¯µÄĞÕÃû£º";
 	cin >> str;
 	find(str);
+	int id;
+	for (int i = 0; i < count; ++i)
+		s[i].display();
+	cout << "ÊäÈëĞŞ¸ÄĞòºÅ£º";
+	cin >> id;
+	s[id - 1].set();
+	for (int i = 0; i < count; ++i)
+		s[i].display();
+	cout << "ÊäÈëÉ¾³ıĞòºÅ£º";
+	cin >> id;
+	for (int i = id; i < count; ++i)
+		s[i - 1] = s[i];
+	count--;
+	for (int i = 0; i < count; ++i)
+		s[i].display();
 	return 0;
 }

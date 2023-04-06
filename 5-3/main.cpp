@@ -13,7 +13,7 @@ int main() {
 	while (!in.eof())
 	{
 		in >> s;
-		if (s == "is"||s=="is."||s=="is,"||s=="Is")
+		if (s == "is" || s == "is." || s == "is," || s == "Is")
 			count++;
 	}
 	cout << "¹²ÓÐ" << count << "¸ö" << endl;

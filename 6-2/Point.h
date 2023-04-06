@@ -5,11 +5,7 @@ class Point {
 	float x, y;
 public:
 	// 其它成员函数，根据需要填写, 如构造函数、拷贝构造函数
-	Point() {
-		x = 0;
-		y = 0;
-	}
-	Point(float x, float y) {
+	Point(float x=0.0, float y=0.0) {
 		this->x = x;
 		this->y = y;
 	}

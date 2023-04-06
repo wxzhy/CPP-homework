@@ -5,11 +5,8 @@ class Complex
 {
 	double real, imag;
 public:
-	Complex() {
-		real = 0;
-		imag = 0;
-	}
-	Complex(double r, double i) {
+	// 其它成员函数，根据需要填写, 如构造函数、拷贝构造函数
+	Complex(double r=0.0, double i=0.0) {
 		real = r;
 		imag = i;
 	}

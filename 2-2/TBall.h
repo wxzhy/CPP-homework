@@ -1,5 +1,5 @@
 #pragma once
-constexpr auto PI = 3.1415926;
+const auto PI = 3.1415926;
 
 class TBall {
 private:

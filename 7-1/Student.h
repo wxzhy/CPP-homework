@@ -1,9 +1,9 @@
 #pragma once
 #include"Person.h"
-const int tuition = 5000;
 class Student:public Person
 {
 	int stuId, stuDuration;
+	static int tuition;
 public:
 
 	Student();

@@ -1,13 +1,14 @@
 #include "Student.h"
 
+int Student::tuition = 5000;
 
-Student::Student():Person()
+Student::Student() :Person()
 {
 	count++;
 	stuDuration = 0;
 }
 
-Student::Student(const char* name, char gender, Date birthday, int id):Person(name,gender,birthday)
+Student::Student(const char* name, char gender, Date birthday, int id) :Person(name, gender, birthday)
 {
 	stuId = id;
 	count++;

@@ -3,7 +3,7 @@
 using namespace std;
 int main() {
 	Location a(-3, -5), b(-1, 6);
-	double d1 = a.distance(b), d2 = distance(a, b);
+	double d1 = a.distance(b), d2 = _distance(a, b);
 	cout << "A(" << a.Getx() << ',' << a.Gety() << ')' << endl;
 	cout << "B(" << b.Getx() << ',' << b.Gety() << ')' << endl;
 	cout << "Distance1=" << d1 << endl;

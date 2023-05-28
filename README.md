@@ -1,6 +1,4 @@
-# Cpp-homework
--------------
-My homework for CPP class.
--------------
-Works of failure(maybe).
-
+# CPP-learning
+个人在“C++面向对象程序设计”的作业。  
+***
+**仅作参考，有错误请及时指正。**
